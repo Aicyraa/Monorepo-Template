@@ -50,6 +50,7 @@ Monorepo-Template/
 | --- | --- |
 | `npm run dev --prefix backend` | Starts backend with nodemon + tsx. |
 | `npm run build --prefix backend` | Builds backend TypeScript output using `tsc`. |
+| `npm run test --prefix backend` | Runs backend tests with Vitest. |
 
 ### Frontend scripts (`/frontend/package.json`)
 
@@ -59,6 +60,7 @@ Monorepo-Template/
 | `npm run build --prefix frontend` | Type-checks and creates production build with Vite. |
 | `npm run lint --prefix frontend` | Runs ESLint on frontend source files. |
 | `npm run preview --prefix frontend` | Serves the frontend production build locally. |
+| `npm run test --prefix frontend` | Runs frontend tests with Vitest. |
 
 ## Testing from root
 
