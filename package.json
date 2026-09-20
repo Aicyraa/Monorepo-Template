@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\""
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+    "test": "node ./scripts/test-runner.cjs"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "eslint": "^10.10.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.5.1",
-    "prettier": "^3.9.7"
+    "prettier": "^3.9.7",
+    "vitest": "^5.0.1"
   }
 }
