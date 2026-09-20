@@ -7,26 +7,27 @@ if (!["frontend", "backend", "all"].includes(target)) {
   process.exit(1);
 }
 
-const runVitest = (scope) =>
+const runTests = (scope) =>
   spawnSync(
-    process.platform === "win32" ? "npx.cmd" : "npx",
-    ["vitest", "--root", scope, "run", "--passWithNoTests"],
+    process.platform === "win32" ? "npm.cmd" : "npm",
+    ["run", "test", "--prefix", scope],
     {
       stdio: "inherit",
       cwd: process.cwd(),
+      shell: process.platform === "win32",
     },
   );
 
 if (target === "all") {
-  const frontendResult = runVitest("frontend");
+  const frontendResult = runTests("frontend");
 
   if (frontendResult.status !== 0) {
     process.exit(frontendResult.status ?? 1);
   }
 
-  const backendResult = runVitest("backend");
+  const backendResult = runTests("backend");
   process.exit(backendResult.status ?? 1);
 }
 
-const result = runVitest(target);
+const result = runTests(target);
 process.exit(result.status ?? 1);
